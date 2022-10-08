@@ -1,4 +1,4 @@
-# [games.ejvali.eu](https://games.ejvali.eu)
+# [games.ejvali.eu](https://games.ejvali.eu) 
 
 [![Discord](https://img.shields.io/discord/886548261748502538)](https://discord.gg/dsTTyA7MuQ) 
 [![GitHub](https://img.shields.io/github/license/DevVali/games-ejvali-eu)](https://games.ejvali.eu/LICENSE.md) 
