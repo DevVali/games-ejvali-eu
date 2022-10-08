@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d6efd">
+  <meta property="og:title" content="games.ejvali.eu">
+  <meta property="og:description" content="Mini-games designed by ejvali.eu!">
+  <meta name="description" content="Mini-games designed by ejvali.eu!">
+  <!-- copyright -->
+  <meta name="author" content="Vali (@ejvali)">
+  <meta name="copyright" content="© 2022 Vali (@ejvali)">
+  <title>games.ejvali.eu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body class="text-center">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" style="font: 1.3rem Inconsolata, monospace;">games.ejvali.eu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="https://games.ejvali.eu">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Games
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://games.ejvali.eu/cpstest">CPS Test</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <br><br><br><br>
+  <h1 style="font: 1.3rem Inconsolata, monospace;font-size: 35px;">CPS Test</h1>
+  <p class="lead">Test your clicks per second speed!</p>
+
+  <br><br>
+  <h1 class="display-6">How to play?</h1>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    Start the game by clicking the element below!
+  </div>
+
+  <br><br>
+  <p>
+    Time left: <span id="timer">5</span> seconds
+    <span id="clicks"></span>
+    <span id="cps"></span>
+  </p>
+  <div
+    style="cursor: pointer; display: grid; max-width: 800px; border: 10px solid #0d6efd; border-radius: 20px; padding: 120px; margin: auto; font-size: 20px; -webkit-user-select: none; -webkit-touch-callout: none; -moz-user-select: none; -ms-user-select: none; user-select: none;"
+    id="area">Click Here To Start Playing</div>
+
+  <br><br>
+  <h1 class="display-6">What is CPS Test?</h1>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    CPS is a short for Clicks Per Second and a game in which you have to click as fast as you can in a given interval.
+    It's easy and fun at the same time. To start the game, start clicking on the area, and quickly after clicking the
+    area start mouse-clicking as fast as you can. Once the timer ends, you will get your final score.
+  </div>
+
+  <br><br>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Made with 💖 by Vali</h5>
+      <p class="card-text">© 2022 <a href="https://ejvali.eu">Vali (@ejvali)</a>, all rights reserved. <a
+          href="https://github.com/DevVali/games-ejvali-eu">Star the project on GitHub.</a></p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <!-- game application script -->
+  <script type="application/javascript">
+    const area = document.querySelector("#area")
+    const timer = document.querySelector("#timer")
+    let started = false
+    let finished = false
+    let clicks = 0
+
+    area.addEventListener("click", countClicks)
+    area.addEventListener("click", updateTimer)
+
+    function countClicks() {
+      if (finished === false) {
+        clicks = clicks + 1
+      }
+    }
+    function updateTimer() {
+      if (started === false) {
+        started = true
+        setTimeout(function () {timer.textContent = 4.5}, 500)
+        setTimeout(function () {timer.textContent = 4.0}, 1000)
+        setTimeout(function () {timer.textContent = 3.5}, 1500)
+        setTimeout(function () {timer.textContent = 3.0}, 2000)
+        setTimeout(function () {timer.textContent = 2.5}, 2500)
+        setTimeout(function () {timer.textContent = 2.0}, 3000)
+        setTimeout(function () {timer.textContent = 1.5}, 3500)
+        setTimeout(function () {timer.textContent = 1.0}, 4000)
+        setTimeout(function () {timer.textContent = 0.5}, 4500)
+        setTimeout(function () {timer.textContent = 0.0; finished = true}, 5000)
+        setTimeout(cpsFinish, 5001)
+      }
+    }
+    function cpsFinish() {
+      const seconds = 5
+      const cps = Number((clicks / seconds).toFixed(1))
+
+      document.querySelector("#clicks").innerHTML = `<br>Score: ${clicks} clicks`
+      document.querySelector("#cps").innerHTML = `<br>CPS: ${cps} clicks/s`
+      console.log(`Score calculated! ${cps} clicks/s`)
+    }
+  </script>
+</body>
+
+</html>
