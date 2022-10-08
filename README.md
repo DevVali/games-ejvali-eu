@@ -6,6 +6,7 @@
 
 Mini-games designed by ejvali.eu!
 
+
 ## Issues
 
 In case you are experiencing any issues, please open a new "Issue"
@@ -16,4 +17,4 @@ Chat with us [at our Discord](https://discord.gg/dsTTyA7MuQ)
 
 ## Copyright
 
-© 2022 Vali (@ejvali), all rights reserved. Licensed under the [MIT License](https://games.ejvali.eu/LICENSE.md).
+© 2022 Vali (@ejvali), all rights reserved
