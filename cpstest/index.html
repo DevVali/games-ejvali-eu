@@ -75,7 +75,7 @@
     <div class="card-body">
       <h5 class="card-title">Made with 💖 by Vali</h5>
       <p class="card-text">© 2022 <a href="https://ejvali.eu">Vali (@ejvali)</a>, all rights reserved. <a
-          href="https://github.com/DevVali/games-ejvali-eu">Star the project on GitHub.</a></p>
+          href="https://github.com/DevVali/games-ejvali-eu/stargazers">Star the project on GitHub.</a></p>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
@@ -119,6 +119,8 @@
 
       document.querySelector("#clicks").innerHTML = `<br>Score: ${clicks} clicks`
       document.querySelector("#cps").innerHTML = `<br>CPS: ${cps} clicks/s`
+      area.textContent = "Reload This Page To Play Again"
+      area.style.cursor = "default"
       console.log(`Score calculated! ${cps} clicks/s`)
     }
   </script>
